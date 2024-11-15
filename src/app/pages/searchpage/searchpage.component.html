@@ -1,0 +1,41 @@
+<h1 class="text-capitalize">Movie Name: <small>{{text}}</small></h1>
+<hr>
+
+<div class="text-center mt-5 text-dark" *ngIf="noexist">
+  <h5>Movie not found</h5>
+</div>
+
+<div class="row" *ngIf="!noexist">
+  <app-tmdb-poster  [movies]="movies"></app-tmdb-poster>
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+<div class="row">
+
+        @for(movie of movies; track movie.id){
+            <div class="card col-4 mb-5 mx-2 p-2 bg-secondary" style="width: 16rem;">
+                <img [src]="'http://image.tmdb.org/t/p/w500'+movie.poster_path"  class="card-img-top cursor" alt="movie photo">
+                <div class="card-body">
+                  <h5 class="card-title"> {{movie.original_title}} </h5>
+                  <p class="card-text">  {{movie.release_date}} </p>
+                  <div class="row d-flex justify-content-between">
+                   
+                    <div class="col-3">
+                      {{movie.vote_average | number:'1.1-2'}}
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+            }
+    </div>
+    -->

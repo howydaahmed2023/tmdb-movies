@@ -1,0 +1,26 @@
+<div class="row mt-4 animate__animated animate__fadeIn">
+    <div class="col-md-4">
+        <img [src]="'http://image.tmdb.org/t/p/w500'+moviedata.poster_path " [alt]="moviedata.title"
+            class="img-thumbnail" style="height: 500px;">
+
+    </div>
+
+    <div class="col-md-8">
+        <h3> {{moviedata.title}} </h3>
+        <h4> vote Average :{{moviedata.vote_average | number:"1.1-2"}}
+
+            <ngb-rating style="color: orange;font-size: 30px;" [rate]="moviedata.vote_average"></ngb-rating>
+        </h4>
+       <h3>overview:</h3>
+           <p>
+            {{moviedata.overview | slice:0:200}}
+        </p>
+
+    </div>
+</div>
+<hr>
+<div class="row mt-5 mb-5">
+    <div class="col">
+        <app-cast-slide-show [cast]="cast" ></app-cast-slide-show>
+    </div>
+</div>
